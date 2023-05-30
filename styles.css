@@ -1,0 +1,43 @@
+body{
+  padding: 10px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: bold;
+  font-family: monospace;
+  margin-left:8.5%;
+}
+
+input, .add-btn {
+  padding:12px;
+  font-size: 16px;;
+}
+
+.add-btn {
+  background-color: rgb(17, 138, 17);
+  color:white;
+  padding: 14px 26px;
+  cursor:pointer;
+}
+
+.delete-btn {
+  background-color: rgb(134, 18, 18);
+  color:white;
+  padding: 14px 17px;
+  cursor:pointer;
+  font-size: 16px;
+}
+.main-content, .content{
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 220px 185px 198px;
+  row-gap: 20px;
+  column-gap:20px;
+  align-items: center;
+}
+
+.content div {
+  font-size: 24px;
+  font-family: cursive;
+}
