@@ -14,22 +14,26 @@ document.querySelector('.add-btn').addEventListener('click', function () {
 });
 
 function createContent() {
-  content.innerHTML='';
+  content.innerHTML = '';
 
-  for (let i = 0; i < arr.length; i++) {
-  let activity= `<div>${arr[i].activity}</div>`;
-  let date= `<div>${arr[i].date}</div>`;
+  arr.forEach(function (element, index) {
+    let activity = `<div>${element.activity}</div>`;
+    let date = `<div>${element.date}</div>`;
 
-  let deleteBtn=`<div><button  class="delete-btn" onclick="
-   arr.splice(${i},1);
-   createContent();
-   ">
-   Delete
-   </button></div>`;
+    let deleteBtn = `<div><button  class="delete-btn">Delete</button></div>`;
 
-   content.innerHTML+=activity;
-   content.innerHTML+=date;
-   content.innerHTML+=deleteBtn;
-  }
-  
+    content.innerHTML += activity;
+    content.innerHTML += date;
+    content.innerHTML += deleteBtn;
+
+    document.querySelectorAll('.delete-btn')
+      .forEach(function (deleteBtn, index) {
+        deleteBtn.addEventListener('click', function () {
+          arr.splice(index, 1);
+          createContent();
+        })
+
+      });
+
+  });
 }
